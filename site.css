@@ -166,17 +166,18 @@ h6.description {
   -webkit-box-shadow:0 2px 4px rgba(30, 30, 30, 0.4);
   -moz-box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
    box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
+   border:1px solid rgba(255,255,255,.2);
+
   }
   #layer-switcher li:first-child {
     }
   #layer-switcher li a.title {
-	font-family:SourceSansProRegular;
-    font-weight: regular;
-    padding: 10px 0;
+	font-family:SourceSansProSemiboldItalic;
+    padding: 5px 0;
     display: block;
     text-decoration: none;
     color:#fff;
-    }
+    font-size:11pt;    }
   #layer-switcher li:hover, div#share:hover, .zoomer:hover  {
     background-color: rgb(8, 206, 80);
     color:#000;
@@ -231,19 +232,21 @@ h6.description {
 /* Notes */
 #sidebar .notes {
   background: #141614;
+  background:rgba(20, 22, 20,.8);
   font-size: 11px;
   line-height: 18px;
   color: #656565;
   padding: 10px;
   position: absolute;
   bottom: 10px;
-left:10px;
+  left:10px;
   -webkit-border-radius: .3em;
   -moz-border-radius:0.3em;
   border-radius: 0.3em;
   -webkit-box-shadow:0 2px 4px rgba(30, 30, 30, 0.4);
   -moz-box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
    box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
+   border:1px solid rgba(255,255,255,.1);
   }
   #sidebar .notes a {
     color: rgb(8, 206, 80);
@@ -440,5 +443,7 @@ a.zoomer {
     font-size: 12px;
     line-height: 18px;
     text-align:left;
-
+}
+.sw {
+	font-family:SourceSansProRegular;
 }
