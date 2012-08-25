@@ -60,7 +60,7 @@ p {
   padding: 0 0 10px 0;
   }
 a {
-  color:#94c48b;
+  color:#fff;
   text-decoration: none;
   }
   a:hover {
@@ -177,21 +177,21 @@ h6.description {
     text-decoration: none;
     color:#fff;
     }
-  #layer-switcher li:hover {
+  #layer-switcher li:hover, div#share:hover, .zoomer:hover  {
     background-color: rgb(8, 206, 80);
     color:#000;
-	background-image: linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
-	background-image: -o-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
-	background-image: -moz-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
-	background-image: -webkit-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
-	background-image: -ms-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
+	background-image: linear-gradient(bottom, rgb(4,97,35) 44%, rgb(0,145,51) 71%);
+	background-image: -o-linear-gradient(bottom, rgb(4,97,35) 44%, rgb(0,145,51) 71%);
+	background-image: -moz-linear-gradient(bottom, rgb(4,97,35) 44%, rgb(0,145,51) 71%);
+	background-image: -webkit-linear-gradient(bottom, rgb(4,97,35) 44%, rgb(0,145,51) 71%);
+	background-image: -ms-linear-gradient(bottom, rgb(4,97,35) 44%, rgb(0,145,51) 71%);
 
 	background-image: -webkit-gradient(
 		linear,
-		left top,
 		left bottom,
-		color-stop(0.44, rgb(0,140,49)),
-		color-stop(0.72, rgb(2,173,65))
+		left top,
+		color-stop(0.44, rgb(4,97,35)),
+		color-stop(0.71, rgb(0,145,51))
 	);
 
     }
@@ -264,23 +264,30 @@ left:10px;
   }
 
 #share {
-  background: #303030;
   top: 130px;
   right: 20px;
   position: absolute;
   z-index: 100;
-  width: 60px;
+  width: 55px;
   text-align: center;
   font-size: 13px;
   -moz-border-radius: 0 0 2px 2px;
   border-radius: 0 0 2px 2px;
-  font-weight: bold;
-  line-height: 30px;
-  height: 30px;
+  line-height: 25px;
+  height: 25px;
   border-top: 1px solid #000;
+  background-color: #141614;
+  -webkit-border-radius: .3em;
+  -moz-border-radius:0.3em;
+  border-radius: 0.3em;
+  -webkit-box-shadow:0 2px 4px rgba(30, 30, 30, 0.4);
+  -moz-box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
+   box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
   }
   #share a {
-    color: #fff;
+	  color: #fff;
+	  text-transform:uppercase;
+	  font-family:SourceSansProBold;
     }
 
 .modal {
@@ -352,13 +359,13 @@ left:10px;
 a.zoomer {
   text-decoration: none;
   position: absolute;
-  background-color: #404040;
-  line-height: 30px;
+  background-color: rgb(20,20,20);
+  line-height: 25px;
   font-size: 20px;
   z-index: 1000;
   text-align: center;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   top: 100px;
   color: #fff;
   z-index: 200;
@@ -367,6 +374,7 @@ a.zoomer {
     right: 50px;
     -moz-border-radius: 2px 0 0 2px;
     border-radius: 2px 0 0 2px;
+    font-family:Arial, 'sans-serif';
     }
   a.zoomout {
     right: 20px;
@@ -374,6 +382,10 @@ a.zoomer {
     -moz-border-radius: 0 2px 2px 0;
     border-radius: 0 2px 2px 0;
     }
+   a.zoomin:hover, a.zoomout:hover, a#share:hover {
+	background-color:#fff;
+	color:#000;
+   }
 
 .wax-legends {
   position:absolute;

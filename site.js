@@ -33,7 +33,6 @@ $(function() {
 			$('#more-data').empty();
             $('#layer-switcher li#' + tilejson.handle).addClass('active');
 			$('.active').children('.description').appendTo('#more-data');
-
 		};
         updateUI(tilejson);
 
