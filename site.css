@@ -112,12 +112,12 @@ a {
 
 #layer-switcher li.active,
 .gradient {
-  background-color: #464b48;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#464b48), to(#202321));
-  background-image: -webkit-linear-gradient(top, #464b48, #202321);
-  background-image:    -moz-linear-gradient(top, #464b48, #202321);
-  background-image:      -o-linear-gradient(top, #464b48, #202321);
-  background-image:         linear-gradient(to bottom, #464b48, #202321);  
+  background-color: #141614;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#464b48), to(#141614));
+  background-image: -webkit-linear-gradient(top, #464b48, #141614);
+  background-image:    -moz-linear-gradient(top, #464b48, #141614);
+  background-image:      -o-linear-gradient(top, #464b48, #141614);
+  background-image:         linear-gradient(to bottom, #464b48, #141614);  
   }
 
 /* --------------------------------------------------------
@@ -125,14 +125,14 @@ a {
 --------------------------------------------------------- */
 h1#title {
   display: block;
-  float: left;
+  float: right;
   height: 25px;
   width: 75px;
   margin: 15px 10px 5px 0;
   padding: 0;
   float: left;
   margin: 22px 0 0;
-  font-size: 20px;
+  font-size: 30pt;
   color: #fff;
   z-index:20;
   }
@@ -175,17 +175,32 @@ h6.description {
     padding: 10px 0;
     display: block;
     text-decoration: none;
+    color:#fff;
     }
   #layer-switcher li:hover {
     background-color: rgb(8, 206, 80);
     color:#000;
-    }
-  #layer-switcher li:hover a {
-    color:#000;
-    }
+	background-image: linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
+	background-image: -o-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
+	background-image: -moz-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
+	background-image: -webkit-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
+	background-image: -ms-linear-gradient(top, rgb(0,140,49) 44%, rgb(2,173,65) 72%);
 
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0.44, rgb(0,140,49)),
+		color-stop(0.72, rgb(2,173,65))
+	);
+
+    }
   #layer-switcher li.active a.title {
     color: rgb(8, 206, 80);
+    }
+  #layer-switcher li:hover,	
+  #layer-switcher li.active:hover a.title, {
+    color:#000;
     }
   #layer-switcher li .description {
     background: rgba(30,30,30,.8);
@@ -215,13 +230,20 @@ h6.description {
 
 /* Notes */
 #sidebar .notes {
-  background: #303030;
+  background: #141614;
   font-size: 11px;
   line-height: 18px;
   color: #656565;
   padding: 10px;
   position: absolute;
   bottom: 10px;
+left:10px;
+  -webkit-border-radius: .3em;
+  -moz-border-radius:0.3em;
+  border-radius: 0.3em;
+  -webkit-box-shadow:0 2px 4px rgba(30, 30, 30, 0.4);
+  -moz-box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
+   box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
   }
   #sidebar .notes a {
     color: rgb(8, 206, 80);
@@ -361,7 +383,6 @@ a.zoomer {
   }
 .wax-legends .wax-legend {
   padding:10px;
-  background:#fff;
   -moz-border-radius: 2px;
   border-radius: 2px;
   box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
@@ -371,8 +392,8 @@ a.zoomer {
 .wax-tooltip {
   z-index: 1000;
   position:absolute;
-  background:#fff;
-  color: #404040;
+  background:#eee;
+  color: #333;
   padding: 10px;
   -webkit-user-select:auto;
   right: 20px;
@@ -402,9 +423,10 @@ a.zoomer {
 #more-data .description {
 	font-family:SourceSansProRegular;
     color: #fff;
-    padding: 10px;
-    font-size: 13px;
+    padding: 5px;
+    padding-bottom:20px;
+    font-size: 12px;
     line-height: 18px;
-    left: 180px;
-    width: 140px;
+    text-align:left;
+
 }
