@@ -1,0 +1,410 @@
+/* ------------------------------------------
+  Reset ♥
+  http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+---------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+body { line-height: 1; }
+ol, ul { list-style: none;  }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+/* tables still need 'cellspacing='0'' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+:focus { outline: 0; }
+
+/* --------------------------------------------------------
+  Global styles
+--------------------------------------------------------- */
+body {
+  background: #464b48;
+  font: 15px/20px 'SourceSansProLightRegular','Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #7a7a7a;
+   -webkit-font-smoothing: antialiased;
+  }
+
+h1 {
+  font-size: 25px;
+  font-family:'SourceSansProSemiboldRegular';
+text-transform:uppercase;
+  color: #999;
+  text-shadow: 0 -1px 0 #000;
+  margin-bottom: 5px;
+  }
+p {
+  padding: 0 0 10px 0;
+  }
+a {
+  color:#94c48b;
+  text-decoration: none;
+  }
+  a:hover {
+    color: #94c48b;
+    }
+
+/* --------------------------------------------------------
+  Layout + Main component styling
+--------------------------------------------------------- */
+#map {
+  background-color: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: 0;
+  }
+#header {
+  position: absolute;
+  width: 100%;
+  top: 0; left: 0;
+  height: 79px;
+  border-bottom: 1px solid #000;
+  -webkit-box-shadow:0 4px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 5000;
+  }
+  #header .inner {
+    padding: 0 10px;
+    }
+#sidebar {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  }
+  #sidebar .inner {
+    padding-top: 90px;
+    }
+  #attribution {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 10px;
+  }
+
+#layer-switcher li.active,
+.gradient {
+  background-color: #464b48;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#464b48), to(#202321));
+  background-image: -webkit-linear-gradient(top, #464b48, #202321);
+  background-image:    -moz-linear-gradient(top, #464b48, #202321);
+  background-image:      -o-linear-gradient(top, #464b48, #202321);
+  background-image:         linear-gradient(to bottom, #464b48, #202321);  
+  }
+
+/* --------------------------------------------------------
+  Header Styling
+--------------------------------------------------------- */
+h1#title {
+  display: block;
+  float: left;
+  height: 25px;
+  width: 75px;
+  margin: 15px 10px 5px 0;
+  padding: 0;
+  float: left;
+  margin: 22px 0 0;
+  font-size: 20px;
+  color: #fff;
+  z-index:20;
+  }
+
+h6.description {
+  clear: both;
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  }
+  h6.description a {
+    color: rgb(8, 206, 80);
+    font-family:SourceSansProSemiboldRegular;
+    font-weight: regular;
+    }
+    h6.description a:hover {
+      color: #fff;
+      }
+/* --------------------------------------------------------
+  Layer switcher
+--------------------------------------------------------- */
+#layer-switcher li {
+  position: relative;
+  margin: 5px;
+  margin-left:10px;
+  padding-left:10px;
+  background:rgb(20,20,20);
+  -webkit-border-radius: 0.4em 0 0.4em 0;
+  -moz-border-radius: 0.4m 0 .0em 0;
+  border-radius: 0.4em 0 .4em 0;
+  -webkit-box-shadow:0 2px 4px rgba(30, 30, 30, 0.4);
+  -moz-box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
+   box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
+  }
+  #layer-switcher li:first-child {
+    }
+  #layer-switcher li a.title {
+	font-family:SourceSansProRegular;
+    font-weight: regular;
+    padding: 10px 0;
+    display: block;
+    text-decoration: none;
+    }
+  #layer-switcher li:hover {
+    background-color: rgb(8, 206, 80);
+    color:#000;
+    }
+  #layer-switcher li:hover a {
+    color:#000;
+    }
+
+  #layer-switcher li.active a.title {
+    color: rgb(8, 206, 80);
+    }
+  #layer-switcher li .description {
+    background: rgba(30,30,30,.8);
+    color: #fff;
+    display: none;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    font-size: 13px;
+    line-height: 18px;
+    left: 180px;
+    width: 140px;
+    -webkit-border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    }
+    #layer-switcher .arrow {
+      position: absolute;
+      left: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid rgba(240,240,240,.8);
+      border-bottom: 10px solid transparent;
+      }
+  #layer-switcher li.active .description { display: block; }
+
+/* Notes */
+#sidebar .notes {
+  background: #303030;
+  font-size: 11px;
+  line-height: 18px;
+  color: #656565;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  }
+  #sidebar .notes a {
+    color: rgb(8, 206, 80);
+    font-family:SourceSansProSemiboldRegular;
+    }
+
+#sidebar #more-data a {
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+  background-color: #303030;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 15px 0;
+  text-align: center;
+  color: #fff;
+  }
+
+#share {
+  background: #303030;
+  top: 130px;
+  right: 20px;
+  position: absolute;
+  z-index: 100;
+  width: 60px;
+  text-align: center;
+  font-size: 13px;
+  -moz-border-radius: 0 0 2px 2px;
+  border-radius: 0 0 2px 2px;
+  font-weight: bold;
+  line-height: 30px;
+  height: 30px;
+  border-top: 1px solid #000;
+  }
+  #share a {
+    color: #fff;
+    }
+
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .7);
+  display: none;
+  z-index: 1000000;
+  }
+.modal-box {
+  width: 500px;
+  height: 200px;
+  background-color: #fff;
+  position: absolute;
+  margin-left: -260px;
+  margin-top: -90px;
+  top: 50%;
+  left: 50%;
+  color: #333;
+  padding: 20px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  }
+  .modal h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    }
+  .modal .tilejson {
+    width: 230px;
+    float: right;
+    }
+  .modal .embed {
+    width: 230px;
+    float: left;
+    }
+  .modal textarea {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 50px;
+    }
+  .modal a {
+    color: #489;
+    }
+  .modal h3 {
+    font-weight: bold;
+    margin-top: 10px;
+    }
+  .modal .close {
+    font-weight: bold;
+    display: block;
+    float: right;
+    width: 25px;
+    line-height: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    }
+
+/* --------------------------------------------------------
+  Wax, largely taken from theme/controls.css
+--------------------------------------------------------- */
+a.zoomer {
+  text-decoration: none;
+  position: absolute;
+  background-color: #404040;
+  line-height: 30px;
+  font-size: 20px;
+  z-index: 1000;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  top: 100px;
+  color: #fff;
+  z-index: 200;
+  }
+  a.zoomin {
+    right: 50px;
+    -moz-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+    }
+  a.zoomout {
+    right: 20px;
+    border-left: 1px solid #000;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    }
+
+.wax-legends {
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  z-index:999999;
+  }
+.wax-legends .wax-legend {
+  padding:10px;
+  background:#fff;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  }
+.wax-tooltip {
+  z-index: 1000;
+  position:absolute;
+  background:#fff;
+  color: #404040;
+  padding: 10px;
+  -webkit-user-select:auto;
+  right: 20px;
+  top: 100px;
+  max-width: 400px;
+  opacity:1;
+  -webkit-transition:opacity 150ms;
+  -moz-transition:opacity 150ms;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -moz-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  -webkit-box-shadow:rgba(0,0,0,0.1) 3px 3px 3px;
+  }
+.wax-fade { opacity:0; }
+.wax-tooltip b {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  }
+.wax-tooltip .close {
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  }
+#more-data .description {
+	font-family:SourceSansProRegular;
+    color: #fff;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    left: 180px;
+    width: 140px;
+}
