@@ -49,8 +49,8 @@ body {
   }
 
 h1 {
-  font-size: 25px;
-  font-family:'SourceSansProSemiboldRegular';
+  font-size: 35pt;
+  font-family:'ChunkFiveRegular';
 text-transform:uppercase;
   color: #999;
   text-shadow: 0 -1px 0 #000;
@@ -126,13 +126,13 @@ a {
 h1#title {
   display: block;
   float: right;
-  height: 25px;
+  height: 25pt;
   width: 75px;
-  margin: 15px 10px 5px 0;
+  margin: 15px 10px 0px 0;
   padding: 0;
   float: left;
   margin: 22px 0 0;
-  font-size: 30pt;
+  font-size: 35pt;
   color: #fff;
   z-index:20;
   }
@@ -145,7 +145,7 @@ h6.description {
   }
   h6.description a {
     color: rgb(8, 206, 80);
-    font-family:SourceSansProSemiboldRegular;
+    font-family:ChunkFiveRegular;
     font-weight: regular;
     }
     h6.description a:hover {
@@ -172,12 +172,12 @@ h6.description {
   #layer-switcher li:first-child {
     }
   #layer-switcher li a.title {
-	font-family:SourceSansProSemiboldItalic;
+	font-family:ChunkFiveRegular;
     padding: 5px 0;
     display: block;
     text-decoration: none;
-    color:#fff;
-    font-size:11pt;    }
+    color:#ddd;
+    font-size:10pt;    }
   #layer-switcher li:hover, div#share:hover, .zoomer:hover  {
     background-color: rgb(8, 206, 80);
     color:#000;
@@ -233,6 +233,7 @@ h6.description {
 #sidebar .notes {
   background: #141614;
   background:rgba(20, 22, 20,.8);
+  font-family:SourceSansProBold;
   font-size: 11px;
   line-height: 18px;
   color: #656565;
@@ -248,24 +249,29 @@ h6.description {
    box-shadow: 0 2px 4px  rgba(30, 30, 30, 0.4);
    border:1px solid rgba(255,255,255,.1);
   }
+#sidebar #more-data a,
   #sidebar .notes a {
     color: rgb(8, 206, 80);
-    font-family:SourceSansProSemiboldRegular;
-    }
-
-#sidebar #more-data a {
-  font-size: 15px;
-  font-weight: bold;
-  display: block;
-  padding: 10px;
-  background-color: #303030;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  margin: 15px 0;
-  text-align: center;
-  color: #fff;
+    font-family:ChunkFiveRegular;
+    font-size: 10px;
+    display: inline;
+    background-color: #303030;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin: 15px 0;
   }
 
+#more-data .description,
+#more-data .description #notes {
+	font-family:SourceSansProRegular;
+    color: #fff;
+    padding: 5px;
+    padding-bottom:20px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align:left;
+    color:#eee;
+}
 #share {
   top: 130px;
   right: 20px;
@@ -435,15 +441,3 @@ a.zoomer {
   top:0;
   right:0;
   }
-#more-data .description {
-	font-family:SourceSansProRegular;
-    color: #fff;
-    padding: 5px;
-    padding-bottom:20px;
-    font-size: 12px;
-    line-height: 18px;
-    text-align:left;
-}
-.sw {
-	font-family:SourceSansProRegular;
-}
