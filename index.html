@@ -9,8 +9,7 @@
     <link   href='site.css' rel='stylesheet'>
 	<link href='css/source-sans-pro/stylesheet.css' rel='stylesheet' />
 	<link href='css/chunkfive/stylesheet.css' rel='stylesheet' />
-	
-	<link href='css/bodonixt/stylesheet.css' rel='stylesheet' />
+	<link href='css/nexa/stylesheet.css' rel='stylesheet' />
     <script src='vendor/modestmaps.min.js'></script>
     <script src='vendor/wax.mm.min.js'></script>
     <script src='vendor/jquery-1.7.2.min.js'></script>
@@ -21,7 +20,7 @@
     <div id='header' class='gradient'>
       <div class='inner'>
         <h1 id='title'>Mars</h1>
-        <h6 class='description'>Mapping Mars with <a href="">NASA</a> and <a href="">USGS</a> open data</a>.
+        <h6 class='description'>Mapping Mars with <a href="http://nasa.gov">NASA</a> and <a href="">USGS</a> open planetary data</a>.
       </div>
     </div>
     <div id='sidebar'>
@@ -30,12 +29,13 @@
           <ul>
             <li id='red-planet'>
               <a class='title' data-layer='herwig.mars-dem,herwig.mars-gazetteer' href='#'>The Red Planet</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>Terrain Data Source: Mars Global Surveyor (MGS), Mars Orbiter Laser Altimeter.The source for the location dataset is the International Astronomical Union (IAU) Working Group for Planetary System Nomenclature (WGPSN). 
+              <div class='description'><span class='arrow'>&nbsp;</span><p>Terrain Data Source: Mars Global Surveyor (MGS), Mars Orbiter Laser Altimeter.The source for the location dataset is the International Astronomical Union (IAU) Working Group for Planetary System Nomenclature (WGPSN).</p>
 			</div>
             </li>
             <li id='lightred'>
               <a class='title' data-layer='herwig.mars-the-red-planet,herwig.mars-gazetteer' href='#'>Lighter Red</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>This map layer has higher contrast to show the diverse Terrain on Mars. Source: NASA MGS MOLA Instrument</div>
+              <div class='description'><span class='arrow'>&nbsp;</span><p>This map layer has higher contrast to show the diverse Terrain on Mars.</p>
+	<p>Source: NASA MGS MOLA Instrument</p></div>
             </li>
             <li id='locations'>
               <a class='title' data-layer='herwig.mars-dem,herwig.mars-gazetteer,herwig.mars-mission-pictures' href='#'>Mission Landings</a>
@@ -43,16 +43,17 @@
             </li>
             <li id='track-marks'>
               <a class='title' data-layer='herwig.mars-first-tracks' href='#'>Curiosity Tracks</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>This image shows Curiosity rover's first track marks on mars on August 22, 2012. Image Credit: NASA/JPL-Caltech</div>
+              <div class='description'><span class='arrow'>&nbsp;</span><p>This image shows Curiosity rover's first track marks on mars on August 22, 2012. Image Credit: NASA/JPL-Caltech</p>
+	</div>
             </li>
             <li id='terrain'>
               <a class='title' data-layer='herwig.mars-the-red-planet,herwig.mars-terrain' href='#'>Terrain</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>This map layer has higher contrast to show the diverse Terrain on Mars. Source: NASA MGS MOLA Instrument</div>
+              <div class='description'><span class='arrow'>&nbsp;</span><p>This map layer has higher contrast to show the diverse Terrain on Mars.<p></p>Source: NASA MGS MOLA Instrument</p></div>
             </li>
           </ul>
         </div>
-        <div class='notes'>
-			<div id='more-data'>
+        <div class='notes' class='gradient'>
+			<div id='more-data' >
 				</div>
         <div class='sw'>All MOLA data from <a href='http://usgs.gov'>USGS</a> and <a href='http://nasa.gov'>NASA</a>. Maps rendered with <a href='http://mapbox.com/tilemill/'>TileMill</a> and hosted on <a href='http://mapbox.com/plans/'>MapBox</a>. All site and TileMill map sources <a href='https://github.com/mapbox/reinventgreen'>available on GitHub</a>.</div>
         </div>

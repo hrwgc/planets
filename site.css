@@ -43,8 +43,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 --------------------------------------------------------- */
 body {
   background: #464b48;
-  font: 15px/20px 'SourceSansProLightRegular','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font: 15px/20px 'SourceSansProRegular','Helvetica Neue',Helvetica,Arial,sans-serif;
   color: #7a7a7a;
+  font-weight:normal;
    -webkit-font-smoothing: antialiased;
   }
 
@@ -235,6 +236,7 @@ h6.description {
   background:rgba(20, 22, 20,.8);
   font-family:SourceSansProBold;
   font-size: 11px;
+  font-weight: normal;
   line-height: 18px;
   color: #656565;
   padding: 10px;
@@ -255,7 +257,7 @@ h6.description {
     font-family:ChunkFiveRegular;
     font-size: 10px;
     display: inline;
-    background-color: #303030;
+   // background-color: #303030;
     -moz-border-radius: 2px;
     border-radius: 2px;
     margin: 15px 0;
@@ -263,8 +265,8 @@ h6.description {
 
 #more-data .description,
 #more-data .description #notes {
-	font-family:SourceSansProRegular;
-    color: #fff;
+	font-family:SourceSansProSemiboldRegular;
+	font-weight:regular;
     padding: 5px;
     padding-bottom:20px;
     font-size: 12px;
@@ -384,6 +386,8 @@ a.zoomer {
     -moz-border-radius: 2px 0 0 2px;
     border-radius: 2px 0 0 2px;
     font-family:Arial, 'sans-serif';
+    color: #fff;
+
     }
   a.zoomout {
     right: 20px;
