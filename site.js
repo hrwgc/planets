@@ -12,8 +12,8 @@ $(function() {
         // Tile layer, position on New York City
         var map = new MM.Map('map',
         new wax.mm.connector(tilejson));
-        map.setCenterZoom(new MM.Location(40.7010,
-            -74.0137),
+        map.setCenterZoom(new MM.Location(48.27,
+            -4.33),
             3);
         wax.mm.zoomer(map).appendTo(map.parent);
 
