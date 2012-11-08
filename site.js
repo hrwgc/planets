@@ -33,6 +33,7 @@ $(function() {
         // Update UI from map info
         var updateUI = function(tilejson) {
             $('#attribution').empty().append(tilejson.attribution);
+			$('#more-data').children('.description').appendTo('.active');
             $('#layer-switcher li').removeClass('active');
 			$('#more-data').empty();
             $('#layer-switcher li#' + tilejson.handle).addClass('active');
