@@ -60,12 +60,13 @@ $(function() {
                 legend.content(tilejson);
                 $(legend.element()).animate({opacity: 1}, 500);
             }
+		    updateUI(tilejson);
+        
 			if (tilejson.handle == 'hirise') {
 				    map.setCenterZoom(new MM.Location(
 				           -4.7270,137.4051),
 				           11);
-	        }
-            updateUI(tilejson);
+	        };
         };
     };
 
