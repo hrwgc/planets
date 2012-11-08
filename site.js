@@ -9,12 +9,16 @@ $(function() {
 
     // Build map, returns function to update map.
     var buildMap = function(tilejson) {
-        // Tile layer, position on New York City
         var map = new MM.Map('map',
         new wax.mm.connector(tilejson));
         map.setCenterZoom(new MM.Location(48.27,
             -4.33),
             3);
+        if (tilejson.handle == 'hirise') {
+			    map.setCenterZoom(new MM.Location(
+			           -4.7270,137.4051),
+			           11);
+        };
         wax.mm.zoomer(map).appendTo(map.parent);
 
         // Interaction
@@ -45,6 +49,7 @@ $(function() {
             $(map.layers[0].parent).fadeOut(500, function() {
                 map.removeLayerAt(0);
             });
+
             interaction = wax.mm
                 .interaction()
                 .map(map)
@@ -55,6 +60,11 @@ $(function() {
                 legend.content(tilejson);
                 $(legend.element()).animate({opacity: 1}, 500);
             }
+			if (tilejson.handle == 'hirise') {
+				    map.setCenterZoom(new MM.Location(
+				           -4.7270,137.4051),
+				           11);
+	        }
             updateUI(tilejson);
         };
     };
@@ -64,13 +74,12 @@ $(function() {
         wax.tilejson(tileUrl($('a', el).attr('data-layer')), function(tilejson) {
             tilejson.handle = $(el).attr('id');
             layers[tilejson.handle] = tilejson;
-            // As soon as first map is loaded, build it and
-            // attach updateMap handler to all layer controls.
             if (i == 0) {
                 var updateMap = buildMap(tilejson);
                 $('#layer-switcher li .title').click(function() {;
                     updateMap(layers[$(this).parent().attr('id')]);
-                    return false;
+                   return false;
+
 				});
             }
         });
@@ -91,4 +100,3 @@ $(function() {
         $('.modal').stop().fadeOut(100);
     });
 });
-
