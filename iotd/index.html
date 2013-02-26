@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <title></title>
+    <link   href='bootstrap.css' rel='stylesheet'>
+	<link href='../css/source-sans-pro/stylesheet.css' rel='stylesheet' />
+	<link href='../css/chunkfive/stylesheet.css' rel='stylesheet' />
+	<link href='../css/nexa/stylesheet.css' rel='stylesheet' />
+    <script src='../vendor/jquery-1.7.2.min.js'></script>
+  </head>
+  <body>
+    <div class="container">
+    <div class="row-fluid" id='images'>
+    <div class="span12" id="images">
+    </div>
+  </div>
+
+  </div>
+    <script type="text/javascript">
+    $(window).load(function () {
+
+    $.getJSON('https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=nasa&query=select%20*%20from%20%60nasa_images%60%20limit%2050%20offset%200&callback=?'
+      ,function(data){
+        console.log(data)
+       $.each(data, function(i,item){
+        $("#images").append("<div class='span2'><a href='"
+          + item.article_url
+          + "'><h5>"
+          + item.article_title 
+          + "</h5><img src='" 
+          + "data:image/png;base64,"
+          + item.image_64
+          + "' /></a>"
+          + "<div class='metadata'><span class='caption'></span>"
+          + "<span class='date'>"
+          + item.article_date
+          + "</span><span class='inst-title'><span class='label'>Instrument Title: </span>"
+          + item.instrument_title
+          + "</span><p class='credit'><span class='label'>Credit: </span>"
+          + item.credit 
+          + "</p></div></div>")
+        });
+      });
+    });
+  </script>
+  </body>
+</html>
