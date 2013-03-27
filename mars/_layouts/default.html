@@ -1,0 +1,30 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <link rel='shortcut icon' href='#' type='image/x-icon' />
+  <title></title>
+    <link href='{{site.baseurl}}/fonts/stylesheet.css' rel='stylesheet'>
+
+  <link href='{{site.baseurl}}/site.css' rel='stylesheet'>
+
+  <script src='{{site.baseurl}}/site.js'></script>
+</head>
+  <body class='{% if page.url == "/" %}front{% endif %}'>
+
+    <div id='container'>
+      {{ content }}
+    </div>
+    <div id='footer' class='projects'>
+      <div class='limiter' style='padding:20px 40px 20px 34px'>
+        <p class='footer-text'></p> 
+
+      </div>
+    </div>
+</body>
+</html>

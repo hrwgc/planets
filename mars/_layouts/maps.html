@@ -1,0 +1,157 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<meta name='apple-mobile-web-app-status-bar-style' content='black' />
+<meta name='apple-mobile-web-app-capable' content='yes' />
+<link rel='shortcut icon' href='' type='image/x-icon' />
+<title>{% if page.url != '/index.html' %}| {{page.title}}{% endif %}</title>
+<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+  <link href='{{site.baseurl}}/fonts/stylesheet.css' rel='stylesheet'>
+<link href='{{site.baseurl}}/site.css' rel='stylesheet' />
+<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+<script src='https://raw.github.com/mapbox/mapbox.js/master/extensions/share.js'></script>
+<script src='{{site.baseurl}}/site.js'></script>
+</head>
+<body class='{{page.permalink | replace: "/",""}}'>
+
+  <div id='masthead' class='map'>
+    <div class='limiter clearfix'>
+      <a href='{{site.baseurl}}/' class='title'><span class='logo'>Mars</span></a>
+    </div>
+  </div>
+
+  <div class='header'>
+    <div class='limiter clearfix'>
+      <div class='nav'>
+        <a href='#' id='toggle' class='icon toggle'>Toggle Header</a>
+      </div>
+      <div class='title-block'>
+        <h2>{{ page.title }} <span class='subtitle'>{{ page.subtitle }}</span></h2>
+        <p><a href='#' id='learn-more'>Learn more &raquo;</a></p>
+      </div>
+    </div>
+    <div id='controls'></div>
+  </div>
+
+  <div class='map' id='map'></div>
+<div id='modal'>
+	<div class='popup'>
+	<div class='header'>
+    <div class='inner'>
+      <h2>{{ page.title }}</h2>
+      <a class='close' href='#close'>&times;</a>
+    </div>
+	</div>
+	<div class='content prose'>
+{% if page.description != empty %}
+<h2>Description</h2>
+{{ page.description }}
+{% endif %}
+
+{% if page.sources | size > 0 %}
+<h2>About the Data</h2>
+
+{% for source in page.sources %}
+<div class='source-entry'>
+<h4 class='data-title'>{{source.title}}</h4>
+<p>{{source.description | markdownify}}</p>
+   {% if source.csv | size > 0 %}
+   <a class='action data csv' href='{{source.csv}}'><span class='csv'></span>CSV</a>
+   {% endif %}
+   {% if source.pdf | size > 0 %}
+   <a class='action data pdf' href='{{source.pdf}}'><span class='pdf'></span>PDF</a>
+   {% endif %}
+    {% if source.url | size > 0 %}
+   <a class='action data link' href='{{source.url}}'><span class='link'></span>www</a>
+   {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+{% if page.content != empty %}
+<h2>Methodology</h2>
+{{ page.content | replace: '!SITE.GITHUB!', site.github  | markdownify }}
+{% endif %}
+
+<h2>About</h2>
+  <div class='partners'>
+  </div>
+</div>
+</div>
+</div>
+  <div class='attribution'>
+  </div>
+</div>
+
+{% if page.map != empty %}
+
+<script>
+$(function () {
+  mapbox.load('{{ page.map }}', function(o) {
+      var map = mapbox.map('map');
+      map.addLayer(o.layer)
+      console.log(o, o.bounds)
+      map.setZoomRange(o.minzoom, o.maxzoom);
+      {% if page.zoomRange | size > 0 %}
+            map.setZoomRange( {{page.zoomRange[0].min}}, {{page.zoomRange[0].max}});
+
+      // map.zoom({{ page.center[0].zoom }}).center({ lat: {{page.center[0].lat}}, lon:{{ page.center[0].lon}}})
+      {% else %}
+
+      {% endif %}
+     map.zoom({{page.center[0].zoom}}).center({ lat: o.center.lat, lon: o.center.lon})
+
+     map.setPanLimits([{ lat: o.bounds[1], lon: o.bounds[0] }, { lat: o.bounds[3], lon: o.bounds[2]}]); 
+
+    map.interaction.auto()
+    map.interaction.on('on');
+    map.interaction.off('off');
+    map.interaction.on({
+        on: function(o) {
+            $('.value').digits();
+        },
+        off: function(){
+          $('.wax-tooltip').hide();
+        }
+    });
+
+      var c = document.getElementById('controls');
+      map.ui.zoomer.add().appendTo(c);
+      mapbox.share().add().appendTo(c);
+      map.ui.hash.add();
+  });
+
+  //Modal Popup box for data
+  $('a#learn-more').bind('click', openModal);
+
+  function openModal() {
+    $('#modal').fadeIn('fast');
+    window.location.hash = 'learn-more'
+    return false;
+  }
+
+  if (location.hash === '#learn-more') {
+    openModal();
+  }
+
+  $('.close').click(function (e) {
+    $('#overlay, #modal').fadeOut();
+    window.location.hash = '';
+    return false;
+  });
+});
+
+{% endif %}
+  $('#toggle').click(function(){
+    $('.header').toggleClass('active-header', 20000 );
+    $('#my-slider').toggle()
+  })
+
+  
+</script>
+</body>
+</html>
+
