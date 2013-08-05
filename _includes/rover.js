@@ -10,7 +10,6 @@ function cycle(markers) {
         if (++i > count - 1) i = 0;
             var feat = markers._layers[parseInt(Object.keys(points._layers)[i])]
             map.addLayer(feat)
-            console.log(feat)
             map.setView(markers._layers[parseInt(Object.keys(points._layers)[i])].getLatLng(),18);
             document.getElementById('count').innerHTML = ('<div class="clearfix"><a href="http://mars.jpl.nasa.gov/msl/multimedia/raw/test/?rawid=' 
                 + feat.feature.properties.itemname 
