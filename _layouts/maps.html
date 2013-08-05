@@ -9,11 +9,13 @@
 <meta name='apple-mobile-web-app-capable' content='yes' />
 <link rel='shortcut icon' href='' type='image/x-icon' />
 <title>{% if page.url != '/index.html' %}| {{page.title}}{% endif %}</title>
-<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
-  <link href='{{site.baseurl}}/fonts/stylesheet.css' rel='stylesheet'>
-<link href='{{site.baseurl}}/site.css' rel='stylesheet' />
-<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
-<script src='https://raw.github.com/mapbox/mapbox.js/master/extensions/share.js'></script>
+<!-- <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' /> -->  
+<link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+<link href='{{site.baseurl}}/fonts/stylesheet.css' rel='stylesheet'>
+<link href='{{site.baseurl}}/site.css' rel='stylesheet' /><!-- 
+<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script> -->
+<!-- <script src='https://raw.github.com/mapbox/mapbox.js/master/extensions/share.js'></script> -->
+  <script src='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
 <script src='{{site.baseurl}}/site.js'></script>
 </head>
 <body class='{{page.permalink | replace: "/",""}}'>
@@ -90,41 +92,15 @@
 
 <script>
 $(function () {
-  mapbox.load('{{ page.map }}', function(o) {
-      var map = mapbox.map('map');
-      map.addLayer(o.layer)
-      console.log(o, o.bounds)
-      map.setZoomRange(o.minzoom, o.maxzoom);
-      {% if page.zoomRange | size > 0 %}
-            map.setZoomRange( {{page.zoomRange[0].min}}, {{page.zoomRange[0].max}});
 
-      // map.zoom({{ page.center[0].zoom }}).center({ lat: {{page.center[0].lat}}, lon:{{ page.center[0].lon}}})
-      {% else %}
+  var map = L.mapbox.map('map')
 
-      {% endif %}
-     map.zoom({{page.center[0].zoom}}).center({ lat: o.center.lat, lon: o.center.lon})
-
-     map.setPanLimits([{ lat: o.bounds[1], lon: o.bounds[0] }, { lat: o.bounds[3], lon: o.bounds[2]}]); 
-
-    map.interaction.auto()
-    map.interaction.on('on');
-    map.interaction.off('off');
-    map.interaction.on({
-        on: function(o) {
-            $('.value').digits();
-        },
-        off: function(){
-          $('.wax-tooltip').hide();
-        }
-    });
-
-      var c = document.getElementById('controls');
-      map.ui.zoomer.add().appendTo(c);
-      mapbox.share().add().appendTo(c);
-      map.ui.hash.add();
-  });
-
-  //Modal Popup box for data
+  var tiles = L.mapbox.tileLayer('{{ page.map }}').on('load', function(o) {
+    tiles.getTileJSON()
+  })
+  map.addLayer(tiles)
+  .setView([ {{page.center[0].lat}}, {{page.center[0].lon}} ],  {{page.center[0].zoom}})
+    //Modal Popup box for data
   $('a#learn-more').bind('click', openModal);
 
   function openModal() {
@@ -142,7 +118,7 @@ $(function () {
     window.location.hash = '';
     return false;
   });
-});
+
 
 {% endif %}
   $('#toggle').click(function(){
@@ -150,8 +126,14 @@ $(function () {
     $('#my-slider').toggle()
   })
 
-  
+{% if page.js %}
+{% include rover.js %}
+{% endif %}
+  })
+
 </script>
+
+
 </body>
 </html>
 
