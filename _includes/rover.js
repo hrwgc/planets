@@ -13,7 +13,7 @@ $('body').append("<div id='count' style='z-index:90000;position:fixed'></div>")
    function getStyle() {
         return {
             color: '#ffcc00',
-            opacity: 0.2,
+            opacity: 0.4,
             stroke: '#000',
             fillOpacity: 1,
             weight: 8
