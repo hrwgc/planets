@@ -93,7 +93,7 @@
     #modal .popup {
       width:100%;
       left:0;
-      top:60px;
+      top:0px;
       margin-left:0;
       position:fixed;
       }
@@ -107,7 +107,7 @@
     #modal .popup {
       width:100%;
       left:0;
-      top:60px;
+      top:0;
       margin-left:0;
       position:fixed;
       }
