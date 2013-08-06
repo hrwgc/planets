@@ -21,5 +21,56 @@ sources:
   - title: "Gazetteer of Planetary Nomenclature"
     url: "http://planetarynames.wr.usgs.gov/Page/Members"
     description: "The source for the location dataset is the International Astronomical Union (IAU) Working Group for Planetary System Nomenclature (WGPSN)."
-description: "<p><p>"
+description: "<p><img src='http://i.imgur.com/NvHRRMq.jpg'/><i>
+PIA14156: Curiosity: The Next Mars Rover (Artist's Concept), Image Credit: NASA/JPL-Caltech</i><p>"
 ---
+I made two Curiosity Rover tracks GeoJSON files, both of which show the trajectory of the rover on Mars over the past year. They are derivative datasets created from the NASA/JPL Rover raw image feeds. 
+
+#### Points
+
+[![](http://i.imgur.com/QJzIMzx.png)](https://github.com/hrwgc/planets/blob/gh-pages/data/locations.geojson)
+
+```
+https://github.com/hrwgc/planets/blob/gh-pages/data/locations.geojson 
+```
+#### Line
+
+[![](http://i.imgur.com/8xzTSI9.png)](https://github.com/hrwgc/planets/blob/gh-pages/js/curiosity-path.geojson)
+
+```
+https://github.com/hrwgc/planets/blob/gh-pages/js/curiosity-path.geojson
+```
+
+## Metadata
+
+I wrote a small python script that parses the location information out of [`locations.xml`](http://mars.jpl.nasa.gov/msl-raw-images/locations.xml), which appears to be the raw location information tied to the NASA/JPL MSL image JSON feeds: 
+
+[![](http://i.imgur.com/M0j3skd.png)](http://mars.jpl.nasa.gov/msl-raw-images/locations.xml)
+
+*MSL Locations.xml feed*
+
+
+#### MSL image feeds
+
+
+##### Image Manifest
+
+[![](http://i.imgur.com/QNTDdx5.png)](http://mars.jpl.nasa.gov/msl-raw-images/image/image_manifest.json)
+*Image feed manifest*
+
+
+```
+http://mars.jpl.nasa.gov/msl-raw-images/image/image_manifest.json
+```
+##### Sol-Specific Feed
+
+[![](http://i.imgur.com/3s8GfzL.png)](http://mars.jpl.nasa.gov/msl-raw-images/image/images_sol43.json)
+
+*example image feed for sol 43*
+
+```
+http://mars.jpl.nasa.gov/msl-raw-images/image/images_sol43.json
+```
+### Script
+
+The Python script is on [GitHub](https://github.com/hrwgc/planets/blob/gh-pages/data/mars_curiosity_tracks.py).

@@ -8,28 +8,37 @@
 <meta name='apple-mobile-web-app-status-bar-style' content='black' />
 <meta name='apple-mobile-web-app-capable' content='yes' />
 <link rel='shortcut icon' href='' type='image/x-icon' />
-<title>{% if page.url != '/index.html' %}| {{page.title}}{% endif %}</title>
-<!-- <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' /> -->  
+<title>{% if page.url != '/index.html' %}{{page.title}}{% endif %}</title>
+<meta name="twitter:site" content="@hrwgc">
+<meta property="og:site_name" content="Chris Herwig">
+<meta name="twitter:url" content="{{site.baseurl}}/{{page.permalink}}">
+<meta property="og:url" content="{{site.baseurl}}/{{page.permalink}}">
+<meta name="twitter:title" content="{{page.title}}">
+<meta property="og:title" content="{{pag.title}}">
+<meta name="twitter:description" content="Follow Curiosity Rover's journey on Mars over the past year.">
+<meta property="og:description" content="Follow Curiosity Rover's journey on Mars over the past year."> 
+<meta name="twitter:image" content="http://i.imgur.com/NvHRRMq.jpg">
+<meta property="og:image" content="http://i.imgur.com/NvHRRMq.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+
 <link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700italic' rel='stylesheet' type='text/css'>
 <link href='{{site.baseurl}}/fonts/stylesheet.css' rel='stylesheet'>
 <script src='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
 <script src='{{site.baseurl}}/site.js'></script>
-    <link href="{{site.baseurl}}/css/fresh.css" rel="stylesheet" />
-    <link href="{{site.baseurl}}/css/modal.css" rel="stylesheet" />
-
-    <link href="{{site.baseurl}}/css/rover.css" rel="stylesheet" />
-
-
+<link href="{{site.baseurl}}/css/fresh.css" rel="stylesheet" />
+<link href="{{site.baseurl}}/css/modal.css" rel="stylesheet" />
+<link href="{{site.baseurl}}/css/rover.css" rel="stylesheet" />
 </head>
 
 <body class='rover'>
  <div class='black clearfix' id="header">
         <div class="col12">
-          <div class="col6">
+          <div class="col9">
             <h1>{{page.title}}</h1>
         </div>
-        <div class="col6">
+        <div class="col3">
           <a href='#' id='learn-more'>Learn more</a>
         </div>
     </div>
@@ -56,6 +65,10 @@
 {{ page.description }}
 {% endif %}
 
+{% if page.content != empty %}
+<h2>Methodology</h2>
+{{ page.content | replace: '!SITE.GITHUB!', site.github  | markdownify }}
+{% endif %}
 {% if page.sources | size > 0 %}
 <h2>About the Data</h2>
 
@@ -75,16 +88,11 @@
 </div>
 {% endfor %}
 {% endif %}
-{% if page.content != empty %}
-<h2>Methodology</h2>
-{{ page.content | replace: '!SITE.GITHUB!', site.github  | markdownify }}
-{% endif %}
 
 </div>
 </div>
 </div>
-
-    <script src="{{site.baseurl}}/js/jquery.scrollTo.min.js"></script>
+<script src="{{site.baseurl}}/js/jquery.scrollTo.min.js"></script>
 
 {% if page.map != empty %}
 

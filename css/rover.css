@@ -48,7 +48,7 @@ font-weight: 200;
 
 
 #header {
-          position:fixed;
+          position:absolute;
     height: 50px;
     left: 0px;
     right:0px;
@@ -56,7 +56,7 @@ font-weight: 200;
     overflow: hidden;
     width: 100%;
     z-index: 5;
-    
+
 }
 
 #header h1 {
@@ -71,6 +71,11 @@ font-weight: 200;
 #header h1 img {
     height: 40px;
     margin-right: 5px;
+}
+
+#header .col6{
+        display: inline-block;
+
 }
 
 #header ul#years {
@@ -135,6 +140,7 @@ font-weight: 200;
     width: 30%;
     right: 0px;
     z-index: 1;
+    min-width:280px;
 }
 
 #pictures .item {
@@ -187,3 +193,45 @@ img .full{
     float:right;
 }
 .title-block{float:right;display:inline-block;}
+
+
+  @media only screen and (max-width:700px) {
+
+}
+
+.spotlight{margin-top:-30px;
+    margin-right:-30px;
+    min-width:100px;
+    min-height:100px;
+    width:100%;
+    height:100%;
+    border: 10px #fff solid;
+    border:10px rgba(255, 255, 255,.5) solid;
+    border-radius:50%;
+    -webkit-box-shadow: 0px 2px 24px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 2px 24px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 2px 24px rgba(50, 50, 50, 0.75);
+}
+
+@media only screen and (max-width:640px) {
+  #modal {
+    top:0;
+    }
+    #modal .popup {
+      width:100%;
+      left:0;
+      top:60px;
+      margin-left:0;
+      position:fixed;
+      }
+body{font-size:80%;}
+#header h1{font-size:20px;}
+#header .col9{max-width:66.67%;padding:0;margin:0;}
+#header .col3{max-width: 33.33%;}
+#header #learn-more { font-size:80%;}
+#pictures { 
+min-width:140px;}
+#pictures .pad2 {padding:10px;}
+
+}
+

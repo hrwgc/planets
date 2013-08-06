@@ -2,8 +2,8 @@
 #modal {
   background:#202020;
   background:rgba(22,24,36,0.8);
-/*  position:fixed;
-*/  left:0;
+  position:fixed;
+  left:0;
   top:0;
   right:0;
   z-index:6000;
@@ -13,31 +13,37 @@
   #modal .popup {
     width:700px;
     left:50%;
-    top:20%;
+    padding:10px;
     margin-left:-350px;
     position:fixed;
     opacity:1;
     background: #f6f6f6;
     -webkit-border-radius:0 0 2px 2px;
     border-radius: 0 0 2px  2px;
+        height: 95%;
+    min-height:95%;
+  
     }
   #modal .content {
     color:#606060;
-    overflow:auto;
-    padding:20px;
-    height:360px;
+    overflow:scroll;
+/*    padding:20px;
+*/    height: 95%;
+    min-height:95%;
     }
     #modal .content a {
       color:#404040;
       }
       #modal .content .action {
-        color:#ccc;
+        color:#6592AA;
         }
-
+#modal .content img {
+  max-width:100%;
+}
   #modal .header {
     background-color:#fff;
     position:absolute;
-    top:-30px;
+    top:0px;
     left:0;
     right:0;
     /*height:20px;
@@ -60,8 +66,7 @@
 
   #modal .header .close {
     float:right;
-/*    padding-top:5px;
-*/    font-size:28px;
+    font-size:28px;
     line-height:10px;
     color:#ccc;
     }
@@ -69,7 +74,10 @@
       color:#404040;
       }
 
+#modal .content.prose{
+  padding-top:50px;
 
+}
 #modal .content h2 {
   font-size:22px;
   color:#202020;
