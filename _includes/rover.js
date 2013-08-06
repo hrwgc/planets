@@ -21,7 +21,8 @@ $.getJSON('/planets/js/locations.geojson', function (geoJson) {
                     $item = $('<div id="' + n['uid'] + '" class="item pad2" data-coords="' + f.geometry.coordinates + '">');
 
                 $item.append('<h2>Sol ' + parseInt(n.startsol) + '</h2>');
-                $item.append('<a href="http://mars.jpl.nasa.gov/msl/multimedia/raw/test/?rawid=' + n.itemname + '"  target="_blank"><img src="' + n.image + '" class="full"/></a><p><a href="http://mars.jpl.nasa.gov/msl/multimedia/raw/test/?s=' + parseInt(n.startsol, 10)
+                $item.append('<a href="http://mars.jpl.nasa.gov/msl/multimedia/raw/test/?rawid=' + n.itemname + '"  target="_blank"><img src="'
+                + n.image + '" class="full"/></a><p><a href="http://mars.jpl.nasa.gov/msl/multimedia/raw/test/?s=#/?slide=' + parseInt(n.startsol, 10)
 
                 + '" target="_blank">All images from Sol ' + parseInt(n.startsol, 10) + '</a></p>') || ''
                 $item.append('<table><tbody>' + '<tr><td>Arrival Time</td><td>' + d + '</td></tr>' + '<tr><td>Contributor</td><td>' + n.contributor + '</td></tr>' + '<tbody></table>');
