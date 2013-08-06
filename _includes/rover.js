@@ -80,7 +80,22 @@ $.getJSON('/planets/js/locations.geojson', function (geoJson) {
         markerLayer.on('click', function (e) {
             e.layer.unbindPopup();
             var n = e.layer.feature.properties;
+            var coords = [e.latlng.lng,e.latlng.lat];
+            var id = $(this).attr('id')
             $('#pictures').scrollTo('#' + n['uid'], 500);
+            if ($('.image-marker') != undefined) {
+                $('.image-marker').remove()
+            }
+            var marker = new L.marker([coords[1], coords[0]], {
+                id: id,
+                icon: L.divIcon({
+                    className: 'image-marker',
+                    html: '<div class="spotlight"></div>',
+                    iconSize: new L.Point(90, 90),
+                })
+            }).addTo(map);
+            map.setView(new L.LatLng(coords[1], coords[0]), 18);
+
         });
     });
 })
