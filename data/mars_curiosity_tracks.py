@@ -72,8 +72,8 @@ featureCollection = []
 for cov in covs:
     geoJson = toGeoJSON(cov)
     featureCollection.append(geoJson)
-    GeoJSON = MakeFeatureCollection(featureCollection)
 
+GeoJSON = MakeFeatureCollection(featureCollection)
 f = open('locations.geojson', 'wb')
 f.write(GeoJSON)
 f.close()
