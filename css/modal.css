@@ -69,6 +69,10 @@
     font-size:28px;
     line-height:10px;
     color:#ccc;
+    position:absolute;
+    top:15px;
+    right:15px;
+    float:right;
     }
     #modal .header .close:hover {
       color:#404040;
